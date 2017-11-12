@@ -1,0 +1,33 @@
+<header title="{one:'店员管理'}"></header>
+<div class="add-btn">
+    <button type="button" class="btn-cancle" ng-click="$ctrl.newClert()">新增</button>
+</div>
+<div class="main-body">
+    <div class="theme-box">
+        <div class="table-responsive">
+            <table class="table my-table">
+                <thead>
+                <tr>
+                    <td>图片</td>
+                    <td>姓名</td>
+                    <td>编号</td>
+                    <td>职务</td>
+                    <td>电话</td>
+                    <td>删除</td>
+                </tr>
+                </thead>
+                <tbody class="category-list">
+                    <tr ng-repeat="item in $ctrl.clers" class="tb-body">
+                        <td><img ng-src="{{item.photoUrl}}" class="img-responsive clert-img"></td>
+                        <td ng-click="$ctrl.goClert(item.id)"><a href="">{{item.name}}</a></td>
+                        <td>{{item.id}}</td>
+                        <td>{{item.position}}</td>
+                        <td>{{item.mobile}}</td>
+                        <td ng-click="$ctrl.del(item.id)"><span class="iconfont icon-lajixiang mr20"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

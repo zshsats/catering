@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="cache-control" content="no-cache">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/iconfont.css" rel="stylesheet">
+    <!--<link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>-->
+    <!--<link href="http://ueditor.baidu.com/ueditor/themes/default/css/ueditor.css" type="text/css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" href="//at.alicdn.com/t/font_fxtrpdjxyu9v0a4i.css">-->
+</head>
+<body>
+<my-header ng-show="$root.menu!='login'"></my-header>
+<div class="login-hd" ng-show="$root.menu=='login'">
+    <img src="images/log.png" alt="" class="img-responsive log-img">
+    <div class="login-ct"></div>
+</div>
+<div ui-view class="clearfix con-box">
+
+</div>
+
+<script src="./js/libs/jquery-3.2.1.min.js"></script>
+<script src="./js/libs/es5.min.js"></script>
+<script src="./js/libs/angular.min.js"></script>
+<script src="./js/libs/animate.min.js"></script>
+<script src="./js/libs/angular-ui-router.min.js"></script>
+<script src="./js/libs/ui-bootstrap-tpls-2.5.0.min.js"></script>
+<script src="./js/libs/angular-file-upload.min.js"></script>
+<script type="text/javascript" src="./js/libs/angular-ueditor.min.js"></script>
+<!--<script src="//cdn.bootcss.com/checklist-model/0.10.0/checklist-model.min.js"></script>-->
+<script src="./js/libs/checklist-model.js"></script>
+<script src="./js/libs/lodash.min.js"></script>
+<script src="./js/libs/echarts.min.js"></script>
+</body>
+</html>

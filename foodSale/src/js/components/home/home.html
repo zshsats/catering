@@ -1,0 +1,68 @@
+
+<div class="main-body hide-sc">
+    <div class="order-left">
+        <div class="theme-title">查看订单</div>
+        <div class="theme-box">
+            <div class="table-responsive">
+                <table class="table tb">
+                    <tr class="tb-head">
+                        <td>菜品</td>
+                        <td>数量</td>
+                        <td>删除</td>
+                    </tr>
+                    <tr class="tb-body" ng-repeat="item in $ctrl.orderDish">
+                        <td>{{item.name}}</td>
+                        <td>
+                            <div class="">
+                                <input class="form-control d-inline" style="width:75px" ng-disabled="item.disale" ng-model="item.num" type="number" ng-change="$ctrl.changTotal($ctrl.selectDish)">
+                            </div>
+                        </td>
+                        <td>
+                            <span class="iconfont icon-lajixiang" ng-click="$ctrl.delDish(item,$ctrl.orderDish)"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <div class="home-foot clearfix">
+            <div class="pull-left foot-box" ng-click="$ctrl.disOrder()">
+                取消
+            </div>
+            <div class="pull-left foot-box" ng-click="$ctrl.getMony()">
+                结算({{$ctrl.total}})
+            </div>
+        </div>
+    </div>
+    <div class="main-count" style="width:65%;">
+        <div class="theme-box">
+            <div class="input-box">
+                <input type="text" ng-model="$ctrl.codeId" class="form-control" ng-init="$ctrl.codeId='0008'" placeholder="请输入座位号">
+            </div>
+        </div>
+        <div class="theme-box">
+            <div ng-repeat="item in $ctrl.dishes track by $index">
+                <p><input type="checkbox" id="cat{{$index+''}}" class="chk_1" ng-model="$ctrl.check[$index]" ng-change="$ctrl.checked($ctrl.check[$index],$index)"/><label for="cat{{$index+''}}"></label><span class="blod">{{item.name}}</span></p>
+                <div class="row" ng-show="$ctrl.check[$index]">
+                    <div class="col-xs-4 col-md-4 col-lg-2" ng-repeat="unit in item.dishlst">
+                        <div class="thumbnail dish-box">
+                            <div class="dish-check">
+                                <p><input type="checkbox" id="dish{{unit.id}}" class="chk_1" data-checklist-model="$ctrl.selectDish"  data-checklist-value="unit" ng-change="$ctrl.select(unit,checked)"><label for="dish{{unit.id}}"></label></p>
+                            </div>
+                            <img ng-src="{{unit.photoUrl}}" alt="..." class="img-responsive" ng-click="$ctrl.goDetail(unit)">
+                            <div class="caption">
+                                <p class="center">
+                                    <span class="mr20">{{unit.name}}</span><span>￥{{unit.salePrice}}</span>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

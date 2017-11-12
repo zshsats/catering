@@ -1,0 +1,40 @@
+<header title="{one:'编辑店铺新闻'}"></header>
+<div class="add-btn">
+    <button type="button" class="btn-cancle" ng-click="$ctrl.formLook()">预览</button>
+    <button type="button" class="btn-cancle" ng-click="$ctrl.save()">保存</button>
+</div>
+<div class="main-body">
+    <div class="theme-box">
+        <div class="row">
+            <div class="col-xs-6 mb20">
+                <div class="input-box ">
+                    <input type="text" class="form-control"  placeholder="作者" name="name" ng-model="$ctrl.newsInfo.auther" required/>
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+            </div>
+            <div class="col-xs-6 mb20">
+                <div class="input-box ">
+                    <input type="text" class="form-control"  placeholder='标题' name="title" ng-model="$ctrl.newsInfo.title" required/>
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mb20">
+            <div class="col-xs-6">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.newsInfo.createDate" is-open="$ctrl.popup1" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                           current-text="今天" close-text="关闭" clear-text="取消" />
+                    <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="$ctrl.popup1 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="theme-box">
+        <div style="margin-bottom:1.25rem" class="ueditor" ready="$ctrl.ready"  config="$ctrl.config" ng-model="$ctrl.content" id="widthoff"></div>
+    </div>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="sl">
+   <div><img src="images/small-login.png" class="img-responsive" alt=""></div>
+   <div class="mtp">
+     <div ng-repeat="item in $ctrl.menu track by $index">
+         <div class="sl-menu" ng-click="$ctrl.goState(item)" ng-class="{true:'silde-activity'}[item.state]"><i class="iconfont {{item.icon}} slide-icon"></i>{{item.name}}</div>
+         <ul class="sl-sc" uib-collapse="!item.state" ng-hide="item.menuList.length==0">
+             <li class="sc-menu" ng-repeat="unit in item.menuList"  ng-click="$ctrl.go(unit,item)">{{unit.name}}</li>
+         </ul>
+     </div>
+   </div>
+    <div class="slide-foot">
+           <h3 style="color: #979abe;margin-left: 50px" ng-click="$ctrl.goBack()">退出 &nbsp;&nbsp;>></h3>
+    </div>
+</div>

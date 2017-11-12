@@ -1,0 +1,12 @@
+@font-size-base:14px;
+#rem{
+  .margin-padding(@mp,@top,@right,@bottom,@left){
+      @{mp}:(@top/@font-size-base)*1rem (@right/@font-size-base)*1rem (@bottom/@font-size-base)*1rem (@left/@font-size-base)*1rem;
+  }
+  .margin-padding-short(@mps,@tb,@rl){
+      @{mps}:(@tb/@font-size-base)*1rem (@rl/@font-size-base)*1rem;
+  }
+  .elem(@elem,@size){
+      @{elem}:(@size/@font-size-base)*1rem;
+  }
+}

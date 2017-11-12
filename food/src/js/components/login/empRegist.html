@@ -1,0 +1,71 @@
+<div class="login-hd">
+    <img src="images/log.png" alt="" class="img-responsive log-img">
+    <div class="login-ct"></div>
+</div>
+<div class="lg-box">
+    <div class="lg-ctr">
+        <h3 class="center mtp10">食为天餐饮系统</h3>
+        <div class="theme-box">
+            <label class="mb10 font-title">店铺编号</label>
+            <div class="input-box mb10">
+                <input type="text" ng-model="$ctrl.registInfo.id" class="form-control login—put"  placeholder="店铺编号">
+                <span class="input-l iconfont icon-cuowu"></span>
+            </div>
+            <label class="mb10 font-title">员工编号</label>
+            <div class="input-box mb10">
+                <input type="text" ng-model="$ctrl.registInfo.code" class="form-control login—put"  placeholder="员工编号">
+                <span class="input-l iconfont icon-cuowu"></span>
+            </div>
+            <label class="mb10 font-title">员工密码：</label>
+            <div class="input-box mb10">
+                <input type="text" ng-model="$ctrl.registInfo.empPwd" class="form-control login—put"  placeholder="密码">
+                <span class="input-l iconfont icon-cuowu"></span>
+            </div>
+            <label class="mb10 font-title">选择权限</label>
+            <div class="input-box mb10">
+                <select class="form-control login—put" ng-model="$ctrl.registInfo.power" ng-init="$ctrl.registInfo.power='2'">
+                    <option value="1">店长</option>
+                    <option value="2">店员</option>
+                </select>
+
+            </div>
+            <div class="clearfix mt20">
+                <div class="pull-left">
+                    <p><input type="checkbox" id="check-pay" class="chk_1" /><label for="check-pay"></label>记住密码</p>
+                </div>
+                <div class="pull-right">
+                    <a href="">忘记密码？</a>
+                </div>
+            </div>
+            <div class="wd mt10">
+                <button class="btn btn-default btn-cancle wd login-size" ng-click="$ctrl.regist()">注册</button>
+            </div>
+
+            <div class="clearfix mt20">
+                <div class="pull-left" ng-click="$ctrl.login()">
+                    <a href="">你已经注册店铺？点击登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

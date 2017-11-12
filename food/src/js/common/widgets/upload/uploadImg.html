@@ -1,0 +1,59 @@
+
+    <!--图片队列-->
+    <!--<div class="" ng-repeat="item in $ctrl.uploader.queue">-->
+        <!--图片预览-->
+        <!--<div class="dish-img" ng-thumb="{ file: item._file, height: 100}" >-->
+        <!--</div>-->
+
+        <!--<div class="row mt10" ng-show="$ctrl.uploader.isHTML5">-->
+            <!--图片状态-->
+            <!--<div class="col-xs-4">-->
+                <!--<span ng-show="item.isSuccess">成功</span>-->
+                <!--<span ng-show="item.isCancel">取消</i></span>-->
+                <!--<span ng-show="item.isError">错误</span>-->
+            <!--</div>-->
+            <!--图片进度-->
+            <!--<div class="col-xs-4">-->
+                <!--<uib-progressbar animate="false" value="dynamic" type="success"><b>{{(item.progress>0?item.progress:0)}}%</b></uib-progressbar>-->
+            <!--</div>-->
+            <!--图片大小-->
+            <!--<div class="col-xs-4">{{ item._file.size/1024/1024|number:2 }} MB</div>-->
+
+           <!--</div>-->
+        <!--图片的操作-->
+        <!--<div class="row mt10">-->
+            <!--<div class="col-xs-4">-->
+                <!--<button class="btn btn-cancle btn-default" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">上传</button>-->
+            <!--</div>-->
+            <!--<div class="col-xs-4">-->
+                <!--<button class="btn btn-cancle btn-default" ng-click="item.cancel()" ng-disabled="!item.isUploading">取消</button>-->
+            <!--</div>-->
+            <!--<div class="col-xs-4">-->
+                <!--<button class="btn btn-cancle btn-default"  ng-click="item.remove()">删除</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+  <!--图片的选择-->
+    <!--onclick="document.getElementById('img').click()"-->
+    <!--<input type="file" nv-file-select="" uploader="$ctrl.uploader" multiple  />-->
+    <div>
+        <div onclick="document.getElementById('img').click()" ng-show="$ctrl.uploader.queue<1">
+           <img ng-src="{{$ctrl.img?$ctrl.img:'images/default_img.png'}}" class="img-responsive" onerror="this.src='images/default_img.png'">
+        </div>
+        <input type="file" id="img" class="dn" nv-file-select="" uploader="$ctrl.uploader" multiple style="display: none" />
+        <div class="" ng-repeat="item in $ctrl.uploader.queue">
+            <div  ng-thumb="{ file: item._file, height:$ctrl.height}">
+            </div>
+            <uib-progressbar class="progress-striped" value="item.progress" type="warning">{{(item.progress>0?item.progress:0)}}%</uib-progressbar>
+            <div class="row mt10">
+                <div class="col-xs-6 clearfix">
+                    <button class="btn btn-cancle btn-default" ng-click="item.upload()"
+                            ng-disabled="item.isReady || item.isUploading || item.isSuccess">上传
+                    </button>
+                </div>
+                <div class="col-xs-6 clearfix">
+                    <button class="btn btn-cancle btn-default pull-right" ng-click="item.remove()">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>

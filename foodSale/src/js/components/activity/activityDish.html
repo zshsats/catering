@@ -1,0 +1,48 @@
+<div class="theme-title">活动菜品</div>
+<div class="theme-box">
+    <div class="table-responsive">
+        <table class="table tb">
+            <tr class="tb-head">
+                <td>图片</td>
+                <td>菜品</td>
+                <td>价格</td>
+                <td>数量</td>
+                <td>总价</td>
+                <td>状态</td>
+            </tr>
+            <tr class="tb-body" ng-repeat="item in $ctrl.actInfo">
+                <td >
+                    <img ng-src="{{item.photoUrl}}" class="img-responsive img-bg" />
+                </td>
+                <td ng-click="$ctrl.lookDish(item.id)">{{item.name}}</td>
+                <td>{{item.salePrice}}</td>
+                <td>
+                    <div class="">
+                        <input class="form-control d-inline" style="width:75px" ng-model="item.num" ng-disabled="item.disale" ng-init="item.num=1" type="number" ng-change="$ctrl.changTotal($ctrl.actInfo)">
+                    </div>
+                </td>
+                <td>{{item.num==1?item.salePrice:item.salePrice*item.num}}</td>
+                <td>
+                    <p><input type="checkbox" id="dish{{item.id}}" class="chk_1" data-checklist-model="$ctrl.selectDish"  data-checklist-value="item" ng-change="$ctrl.select(item,checked)"/><label for="dish{{item.id}}"></label></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="clearfix">
+        <div class="pull-left mr20">
+            <span>{{$ctrl.content}}</span>
+        </div>
+        <div class="pull-right mr20">
+            <span>菜品的总价：</span><span>{{$ctrl.total}}</span>
+            <span>选择的的菜品总价：</span><span>{{$ctrl.actPrice}}</span>
+        </div>
+    </div>
+</div>
+<div class="foot-model clearfix">
+    <div class="pull-right mr20">
+        <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.save()">保存</button>
+    </div>
+    <div class="pull-right mr20">
+        <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.dismiss()">取消</button>
+    </div>
+</div>

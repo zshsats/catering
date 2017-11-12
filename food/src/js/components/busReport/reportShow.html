@@ -1,0 +1,57 @@
+<header title="{one:'营业分析'}"></header>
+<div class="main-body">
+    <div class="theme-box">
+        <div class="cat-box">
+            <ul class="clearfix cat-menu">
+                <li class="pull-left" ng-repeat="item in $ctrl.dates track by $index" ng-class="{[$index]:'loginActive'}[$ctrl.selected]" ng-click="$ctrl.selectDate($index,item)">{{item.name}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="theme-box">
+        <div class="center">
+            <span class="iconfont icon-xiangzuojiantou date-lr mr20" ng-click="$ctrl.last()"></span>
+             <div class="btn d-inline date-wd" ng-show="$ctrl.selected==0">
+                 <p class="input-group">
+                     <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.reportInfo.start" is-open="$ctrl.popup1" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                            current-text="今天" close-text="关闭" clear-text="取消" ng-change="$ctrl.day()" />
+                     <span class="input-group-btn">
+                      <button type="button" class="btn btn-default" ng-click="$ctrl.popup1 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                      </span>
+                 </p>
+             </div>
+            <div class="d-inline date-wd" ng-show="$ctrl.selected==1 || $ctrl.selected==2">
+                <button type="button" class="btn btn-default btn-block">{{$ctrl.selected==1?$ctrl.year+'年第'+$ctrl.weekDay+'周':$ctrl.year+'年第'+$ctrl.monthDay+'月'}}</button>
+            </div>
+            <span class="iconfont icon-xiangyoujiantou date-lr ml20" ng-click="$ctrl.foot()"></span>
+        </div>
+    </div>
+    <div class="theme-box">
+        <div class="table-responsive">
+            <table class="table tb">
+                <tr class="tb-head">
+                    <td>订单号</td>
+                    <td>销售量</td>
+                    <td>总支出</td>
+                    <td>实收价</td>
+                    <td>优惠价</td>
+                </tr>
+                <tr class="tb-body" ng-repeat="item in $ctrl.reportResult.orderData">
+                    <td>{{item.code}}</td>
+                    <td>{{item.num}}</td>
+                    <td>{{item.salePrice}}</td>
+                    <td>{{item.getPrice}}</td>
+                    <td>{{item.actPrice}}</td>
+                </tr>
+                <tr>
+                    <td>合计：{{$ctrl.reportResult.count}}</td>
+                    <td>{{ $ctrl.reportResult.num}}</td>
+                    <td>{{ $ctrl.reportResult.salePrice}}</td>
+                    <td>{{ $ctrl.reportResult.getPrice}}</td>
+                    <td>{{ $ctrl.reportResult.actPrice}}</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</div>

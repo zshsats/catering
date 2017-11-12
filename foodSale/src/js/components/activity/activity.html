@@ -1,0 +1,34 @@
+
+<div class="main-body show-sc">
+    <div class="theme-title">活动介绍</div>
+    <div class="theme-box clearfix">
+        <div style="height:auto;" >
+            <div class="clearfix" uib-carousel active="$ctrl.active" interval="$ctrl.myInterval" no-wrap="$ctrl.noWrapSlides">
+                <div uib-slide  ng-repeat="slide in $ctrl.slides track by slide.num" index="slide.num">
+                    <img ng-src="{{slide.photoUrl}}" style="margin:auto;width: 100%;height: 400px;">
+                    <div class="carousel-caption">
+                        <h3>{{slide.text}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="theme-title">活动详情</div>
+    <div class="theme-box">
+        <div class="table-responsive">
+            <table class="table tb">
+                <tr class="tb-head">
+                    <td>活动名称</td>
+                    <td>内容</td>
+                    <td>日期</td>
+                </tr>
+                <tr class="tb-body" ng-repeat="item in $ctrl.dishes" ng-show="item.state">
+                    <td ng-click="$ctrl.goAct(item)"><a>{{item.name}}</a></td>
+                    <td>满{{item.full}}元减{{item.cut}}元</td>
+                    <td>{{item.startDate |date:'yyyy-MM-dd'}}至{{item.endDate}}</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="login-hd">
+    <img src="images/log.png" alt="" class="img-responsive log-img">
+    <div class="login-ct"></div>
+</div>
+<div class="lg-box ">
+    <div class="lg-ctr">
+        <h3 class="center mtp10">食为天餐饮系统</h3>
+        <div class="select-box">
+            <ul class="clearfix select-menu">
+                <li class="pull-left" ng-class="{1:'loginActive'}[$ctrl.selected]" ng-click="$ctrl.select(1)">店铺登录</li>
+                <li class="pull-left" ng-class="{2:'loginActive'}[$ctrl.selected]" ng-click="$ctrl.select(2)">员工登录</li>
+            </ul>
+        </div>
+        <div class="theme-box">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

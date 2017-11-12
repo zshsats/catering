@@ -1,0 +1,29 @@
+<div class="theme-title">订单详情</div>
+<div class="theme-box">
+    <div class="table-responsive">
+        <table class="table tb">
+            <tr class="tb-head">
+                <td>图片</td>
+                <td>菜品</td>
+                <td>数量</td>
+                <td>状态</td>
+            </tr>
+            <tr class="tb-body" ng-repeat="item in $ctrl.orderInfo track by $index">
+                <td>
+                    <img ng-src="{{item.photoUrl}}" class="img-responsive img-bg" />
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.num}}</td>
+                <td><p><input type="checkbox" id="order{{$index}}" class="chk_1" data-checklist-model="$ctrl.orderOver" data-checklist-value="item"/><label for="order{{$index}}"></label></p></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="foot-model clearfix">
+    <div class="pull-right mr20">
+        <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.save()">保存</button>
+    </div>
+    <div class="pull-right mr20">
+        <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.dismiss()">取消</button>
+    </div>
+</div>

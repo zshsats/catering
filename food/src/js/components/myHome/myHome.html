@@ -1,0 +1,55 @@
+<header title="{one:'首页'}"></header>
+<div class="main-body">
+    <div class="theme-title">开店时长</div>
+    <div class="theme-box">
+        到今天为止你已经开店天{{$ctrl.days | number:0}}了,距离到期时间还差{{$ctrl.time | number:0}}天。
+    </div>
+    <div class="theme-title">店铺概况</div>
+    <div class="theme-box">
+        <div>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="thumnail-value text-center box-shadow equa-height ">
+                        <div class="text-center">
+                            <img src="images/dds.png" alt="" class="img-responsive box-img">
+                        </div>
+                        <h3>订单:{{$ctrl.totalInfo.count}}</h3>
+                        <p>订单总数</p>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="thumnail-value text-center box-shadow equa-height ">
+                        <div class="text-center">
+                            <img src="images/ss.png" alt="" class="img-responsive box-img">
+                        </div>
+                        <h3>销量:{{$ctrl.totalInfo.num}}</h3>
+                        <p>销售总量</p>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="thumnail-value text-center box-shadow equa-height ">
+                        <div class="text-center">
+                            <img src="images/jyz.png"  class="img-responsive box-img">
+                        </div>
+                        <h3>总价:{{$ctrl.totalInfo.salePrice}}</h3>
+                        <p>销售总价</p>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="thumnail-value text-center box-shadow equa-height ">
+                        <div class="text-center">
+                            <img src="images/yuj.png"  class="img-responsive box-img">
+                        </div>
+                        <h3>优惠:{{$ctrl.totalInfo.actPrice}}</h3>
+                        <p>优惠总价</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

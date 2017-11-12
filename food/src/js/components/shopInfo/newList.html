@@ -1,0 +1,22 @@
+<header title="{one:'新闻列表'}"></header>
+<div class="main-body">
+    <div class="theme-title">新闻展示</div>
+    <div class="theme-box">
+        <div class="table-responsive">
+            <table class="table tb">
+                <tr class="tb-head">
+                    <td>标题</td>
+                    <td>作者</td>
+                    <td>时间</td>
+                    <td>删除</td>
+                </tr>
+                <tr class="tb-body" ng-repeat="item in $ctrl.newsInfo">
+                    <td ng-click="$ctrl.goActicle(item.id)"><a>{{item.title}}</a></td>
+                    <td>{{item.auther}}</td>
+                    <td>{{item.createDate}}</td>
+                    <td ng-click="$ctrl.del(item.id)"><span class="iconfont icon-lajixiang mr20"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

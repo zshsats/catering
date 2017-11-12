@@ -1,0 +1,52 @@
+<header title="{one:'活动图片'}"></header>
+
+<div class="main-body">
+    <div class="theme-title">添加活动轮播</div>
+    <div class="theme-box">
+        <div class="row clearfix">
+            <div class="col-xs-6" style="overflow: hidden">
+                <p class="mt10">请选择上传活动轮播图片</p>
+                <div class="clearfix">
+                    <upload-img img="images/default_img.png"  height="210"></upload-img>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p class="mt10">活动顺序</p>
+                <div class="input-box">
+                    <input type="number" ng-model="$ctrl.bannerInfo.num" class="form-control"  placeholder="请输入一位整数">
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+                <p class="mt10">活动内容</p>
+                <textarea class="form-control" rows="4" ng-model="$ctrl.bannerInfo.text"></textarea>
+            </div>
+        </div>
+        <div class="foot-model clearfix">
+            <div class="pull-right">
+                <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.addBanner()">新增</button>
+            </div>
+        </div>
+    </div>
+    <div class="theme-title">活动轮播列表</div>
+    <div class="theme-box">
+        <div class="table-responsive">
+            <table class="table tb">
+                <tr class="tb-head">
+                    <td>活动编号</td>
+                    <td>活动图片</td>
+                    <td>活动介绍</td>
+                    <td>删除</td>
+                </tr>
+                <tr class="tb-body" ng-repeat="item in $ctrl.resultBack">
+                    <td>{{item.num}}</td>
+                    <td>
+                       <img ng-src="{{item.photoUrl}}" class="img-responsive banner-img">
+                    </td>
+                    <td>{{item.text}}</td>
+                    <td>
+                        <span class="iconfont icon-lajixiang" ng-click="$ctrl.delBanner(item)"></span>
+                    </td>
+
+                </tr>
+            </table>
+    </div>
+</div>

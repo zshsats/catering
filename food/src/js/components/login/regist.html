@@ -1,0 +1,61 @@
+<div class="login-hd">
+    <img src="images/log.png" alt="" class="img-responsive log-img">
+    <div class="login-ct"></div>
+</div>
+<div class="lg-box">
+    <div class="lg-ctr">
+        <h3 class="center mtp10">食为天餐饮系统</h3>
+        <div class="theme-box">
+            <form name="formAct" novalidate>
+                <div class="input-box">
+                    <input type="text" ng-model="$ctrl.registInfo.shopId" name="shopId" class="form-control login—put"  placeholder="帐号" required ng-maxlength="4"/>
+                    <span class="input-l iconfont icon-cuowu" ng-click="$ctrl.clearInput($ctrl.registInfo)"></span>
+                </div>
+                <div class="valide" ng-show="formAct.shopId.$dirty && formAct.shopId.$invalid">
+                    <div ng-show="formAct.shopId.$error.required">管理员账号不能为空</div>
+                    <div ng-show="formAct.shopId.$error.maxlength">管理员账号不能超过四个字符</div>
+                </div>
+                <div class="input-box mt20">
+                    <input type="text" ng-model="$ctrl.registInfo.pwd" name="pwd" class="form-control login—put"  placeholder="密码" required ng-maxlength="8">
+                    <span class="input-l iconfont icon-cuowu" ng-click="$ctrl.clearInput($ctrl.registInfo)"></span>
+                </div>
+                <div class="valide" ng-show="formAct.pwd.$dirty && formAct.pwd.$invalid">
+                    <div ng-show="formAct.pwd.$error.required">管理员账号密码不能为空</div>
+                    <div ng-show="formAct.pwd.$error.maxlength">管理员密码不能超过8位</div>
+                </div>
+                <div class="row mb10 mt10">
+                    <div class="col-xs-6">店铺营业日期</div>
+                    <div class="col-xs-6">店铺结束日期</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.registInfo.startDate" is-open="$ctrl.popup1" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                                   current-text="今天" close-text="关闭" clear-text="取消" />
+                            <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="$ctrl.popup1 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.registInfo.endDate" is-open="$ctrl.popup2" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                                   current-text="今天" close-text="关闭" clear-text="取消" />
+                            <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="$ctrl.popup2 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </p>
+                    </div>
+                </div>
+            </form>
+            <div class="wd mt10">
+                <button class="btn-cancle wd login-size" ng-disabled="formAct.$invalid" ng-click="$ctrl.regist()">注册</button>
+            </div>
+            <div class="clearfix mt20">
+                <div class="pull-left" ng-click="$ctrl.login()">
+                    <a href="">你已经注册店铺？点击登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

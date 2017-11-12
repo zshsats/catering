@@ -1,0 +1,26 @@
+
+<div class="main-body">
+    <div class="theme-box">
+        <div class="table-responsive theme-box">
+            <table class="table tb">
+                <tr class="tb-head">
+                    <td>座位号</td>
+                    <td>订单号</td>
+                    <td>菜品个数</td>
+                    <td>菜品总价</td>
+                    <td>状态</td>
+                    <td>删除</td>
+
+                </tr>
+                <tr class="tb-body" ng-repeat="item in $ctrl.orders">
+                    <td>{{item.seat}}</td>
+                    <td ng-click="$ctrl.goOrder(item.code)"><a>{{item.code}}</a></td>
+                    <td>{{item.num}}</td>
+                    <td>{{item.salePrice}}</td>
+                    <td><div class="state-act" ng-class="{'已做':'term-pass','未做':'no-pass'}[item.state]">{{item.state}}</div></td>
+                    <td ng-click="$ctrl.delOrder(item)"><span class="iconfont icon-lajixiang"></span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

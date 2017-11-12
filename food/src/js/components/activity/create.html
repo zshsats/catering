@@ -1,0 +1,97 @@
+<header title="{one:'活动方案内容'}"></header>
+<div class="add-btn">
+    <button type="button" class="btn-cancle" ng-click="$ctrl.del()">删除</button>
+    <button type="button" class="btn-cancle" ng-click="$ctrl.save()">保存</button>
+</div>
+<div class="main-body">
+    <div class="row">
+        <div class="col-xs-9">
+            <div class="theme-title">基本信息</div>
+            <div class="theme-box">
+                <form name="formAct" novalidate>
+                    <div class="clearfix">
+                        <div class="pull-left line">
+                            <span>消费金额满</span>
+                        </div>
+                        <div class="pull-left ml20">
+                            <div class="input-box">
+                                <input type="number" class="form-control login—put" name="full" ng-model="$ctrl.actInfo.full"  placeholder="输入金额" required/>
+                            </div>
+                            <div class="valide mb10" ng-show="formAct.full.$dirty && formAct.full.$invalid">
+                                <div ng-show="formAct.full.$error.required">满减金额不能为空</div>
+                            </div>
+                        </div>
+                        <div class="pull-left line ml20">
+                            <span>减</span>
+                        </div>
+                        <div class="pull-left ml20">
+                            <div class="input-box">
+                                <input type="number" class="form-control login—put" name="cut" ng-model="$ctrl.actInfo.cut" placeholder="输入金额" required/>
+                            </div>
+                            <div class="valide mb10" ng-show="formAct.cut.$dirty && formAct.cut.$invalid">
+                                <div ng-show="formAct.cut.$error.required">满减的金额不能为空</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt20">活动名称</div>
+                    <div class="mt20">
+                        <div class="input-box">
+                            <input type="text" class="form-control"  placeholder="活动名称" name="name" ng-model="$ctrl.actInfo.name" required/>
+                            <span class="input-s iconfont icon-cuowu"></span>
+                        </div>
+                        <div class="valide mb10" ng-show="formAct.name.$dirty && formAct.name.$invalid">
+                            <div ng-show="formAct.name.$error.required">活动名称不能为空</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="theme-title">范围</div>
+            <div class="theme-box">
+                <p>请选择参与活动的菜品</p>
+                <div class="d-inline">
+                    <select class="form-control my-select" ng-model="$ctrl.actInfo.itemAll" ng-init="$ctrl.actInfo.itemAll='1'" >
+                        <option value="0">部分菜品</option>
+                        <option value="1">全部菜品</option>
+                    </select>
+                </div>
+                <div class="d-inline ml20" ng-show="$ctrl.actInfo.itemAll=='0'">
+                    <span>{{$ctrl.selectDishs.length?$ctrl.selectDishs.length:0}}</span>
+                    <button class="btn-cancle ml20" ng-click="$ctrl.selectDish()">选择</button>
+                </div>
+                <div class="show-select mt10" ng-show="$ctrl.selectDishs.length > 0">
+                    <div class="btn-cancle mr20 btn mb10" ng-repeat="list in $ctrl.selectDishs">
+                        {{list.name+list.unit}}
+                    </div>
+                </div>
+            </div>
+            <div class="theme-title">有效日期</div>
+            <div class="theme-box">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.actInfo.startDate" is-open="$ctrl.popup1" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                                   current-text="今天" close-text="关闭" clear-text="取消" />
+                            <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="$ctrl.popup1 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </p>
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="input-group">
+                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.actInfo.endDate" is-open="$ctrl.popup2" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                                   current-text="今天" close-text="关闭" clear-text="取消" />
+                            <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="$ctrl.popup2 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="act-left">
+                <img src="images/activity/h5add_A.png" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+</div>

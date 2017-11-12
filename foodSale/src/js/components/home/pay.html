@@ -1,0 +1,108 @@
+<div class="theme-title">选择支付方式支付</div>
+<div class="theme-box">
+    <div class="pay-box clearfix">
+        <div class="pull-left">
+            <img src="images/pay/pay_cash.png" alt="..." class="img-responsive pay-img">
+        </div>
+        <div class="pull-right pay-way">
+            <input type="checkbox" id="c1" class="chk_3" ng-model="$ctrl.cash"/><label for="c1"></label>
+        </div>
+    </div>
+    <div class="pay-box panel-body clearfix" ng-show="$ctrl.cash">
+        <ul class="nav nav-pills" role="tablist">
+            <li role="presentation" ><a href="#">座位号 <span class="badge">{{$ctrl.payInfo.seat}}</span></a></li>
+            <li role="presentation"><a href="#">菜品量 <span class="badge">{{$ctrl.payInfo.orderDish.length}}</span></a></li>
+            <li role="presentation"><a href="#">总价 <span class="badge">{{$ctrl.payInfo.getPrice+$ctrl.payInfo.actPrice}}</span></a></li>
+            <li role="presentation"><a href="#">活动价 <span class="badge">{{$ctrl.payInfo.actPrice}}</span></a></li>
+            <li role="presentation"><a href="#">应付价 <span class="badge">{{$ctrl.payInfo.getPrice}}</span></a></li>
+            <li role="presentation" class="active" ng-click="$ctrl.goTotal()"><a>付款</a></li>
+        </ul>
+    </div>
+    <div class="pay-box clearfix ">
+        <div class="pull-left">
+            <img src="images/pay/pay_wechat.png" alt="..." class="img-responsive pay-img">
+        </div>
+        <div class="pull-right pay-way">
+            <input type="checkbox" id="c2" class="chk_3" ng-model="$ctrl.wechat" /><label for="c2"></label>
+        </div>
+    </div>
+    <div class="pay-box panel-body clearfix" ng-show="$ctrl.wechat">
+        <div class="row">
+            <div class="col-xs-6">
+                <img src="images/pay/wx.png" class="img-responsive" alt="...">
+            </div>
+            <div class="col-xs-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.seat}}</span>
+                        座位号
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.orderDish.length}}</span>
+                        菜品量
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.getPrice+$ctrl.payInfo.actPrice}}</span>
+                        总价
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.actPrice}}</span>
+                        活动价
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.getPrice}}</span>
+                        应付价
+                    </li>
+                    <li class="list-group-item active center" ng-click="$ctrl.goTotal()">
+                        付款
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pay-box clearfix">
+        <div class="pull-left">
+            <img src="images/pay/pay_alipay.png" alt="..." class="img-responsive pay-img">
+        </div>
+        <div class="pull-right pay-way">
+            <input type="checkbox" id="c3" class="chk_3" ng-model="$ctrl.alipay"/><label for="c3"></label>
+        </div>
+    </div>
+    <div class="pay-box panel-body clearfix" ng-show="$ctrl.alipay">
+        <div class="row">
+            <div class="col-xs-6">
+                <img src="images/pay/zf.png" class="img-responsive" alt="...">
+            </div>
+            <div class="col-xs-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.seat}}</span>
+                        座位号
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.orderDish.length}}</span>
+                        菜品量
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.getPrice+$ctrl.payInfo.actPrice}}</span>
+                        总价
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.actPrice}}</span>
+                        活动价
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">{{$ctrl.payInfo.getPrice}}</span>
+                        应付价
+                    </li>
+                    <li class="list-group-item active center" ng-click="$ctrl.goTotal()">
+                        付款
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

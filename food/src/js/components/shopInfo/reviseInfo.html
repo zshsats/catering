@@ -1,0 +1,122 @@
+<header title="{one:'修改'}"></header>
+
+<div class="main-body">
+    <div class="theme-title">基本信息</div>
+    <div class="theme-box">
+        <div class="row">
+            <div class="col-xs-6">
+                <p class="mt10">店铺编号</p>
+                <div class="input-box">
+                    <input type="text" class="form-control" ng-model="$ctrl.reviseInfo.code" ng-disabled="true" placeholder="店铺编号">
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+                <p class="mt10">门店名称</p>
+                <div class="input-box">
+                    <input type="text" class="form-control" ng-model="$ctrl.reviseInfo.name" placeholder="门店名称">
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+
+                <p class="mt10">店铺管家</p>
+                <div class="input-box">
+                    <input type="text" class="form-control" ng-model="$ctrl.reviseInfo.admin" placeholder="输入老板姓名">
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+                <p class="mt10">联系电话</p>
+                <div class="input-box">
+                    <input type="text" class="form-control" ng-model="$ctrl.reviseInfo.mobile" placeholder="联系电话">
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p class="mt10">请选择上传门店图片</p>
+                <div>
+                    <upload-img img="$ctrl.reviseInfo.photoUrl" height="233"></upload-img>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="theme-title">店铺信息</div>
+    <div class="theme-box">
+        <div class="row mb20">
+            <div class="col-xs-6">店铺营业日期</div>
+            <div class="col-xs-6">店铺到期日期</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.reviseInfo.startDate" is-open="$ctrl.popup1" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                           current-text="今天" close-text="关闭" clear-text="取消" />
+                    <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="$ctrl.popup1 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <p class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="$ctrl.reviseInfo.endDate" is-open="$ctrl.popup2" datepicker-options="$ctrl.dateOptions" ng-required="true"
+                           current-text="今天" close-text="关闭" clear-text="取消" />
+                    <span class="input-group-btn">
+                          <button type="button" class="btn btn-default" ng-click="$ctrl.popup2 = true"><i class="glyphicon glyphicon-calendar"></i></button>
+                          </span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <p class="mt10">店铺类型</p>
+                <div class="shop-type">
+                    <div class="input-box">
+                        <input type="text" class="form-control" ng-model="$ctrl.reviseInfo.type" placeholder="店铺类型">
+                        <span class="input-s iconfont icon-cuowu"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p class="mt10">营业时间</p>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div uib-timepicker ng-model="$ctrl.reviseInfo.startTime" ng-change="$ctrl.changeTime()" show-meridian="false"></div>
+
+                    </div>
+                    <div class="col-xs-6">
+                        <div uib-timepicker ng-model="$ctrl.reviseInfo.endTime" ng-change="$ctrl.changeTime()" show-meridian="false"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="theme-title">店铺地址</div>
+    <div class="theme-box">
+        <div class="row">
+            <div class="col-xs-4">
+                <select class="form-control" ng-model="$ctrl.reviseInfo.province"  ng-change="$ctrl.checkItem()">province
+                    <option value="{{item.province}}" ng-repeat="item in $ctrl.lists">{{item.province}}</option>
+                </select>
+            </div>
+            <div class="col-xs-4">
+                <select class="form-control" ng-model="$ctrl.reviseInfo.city" ng-change="$ctrl.codeSelect()">
+                    <option value="{{unit.city}}" ng-repeat="unit in $ctrl.citys">{{unit.city}}</option>
+                </select>
+            </div>
+            <div class="col-xs-4">
+                <div class="input-box">
+                    <input type="text" class="form-control" ng-model="$ctrl.reviseInfo.address" placeholder="店铺详细地址">
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="theme-title">公告信息</div>
+    <div class="theme-box">
+        <textarea class="form-control" ng-model="$ctrl.reviseInfo.info" rows="6"></textarea>
+    </div>
+    <div class="foot-model clearfix">
+        <div class="pull-right mr20">
+            <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.save()">保存</button>
+        </div>
+        <div class="pull-right mr20">
+            <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.dismiss()">取消</button>
+        </div>
+    </div>
+</div>

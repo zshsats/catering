@@ -1,0 +1,61 @@
+<header title="{one:'店铺信息'}"></header>
+<div class="add-btn">
+    <button type="button" class="btn-cancle" ng-click="$ctrl.resiveInfo()">修改</button>
+</div>
+<div class="main-body">
+    <div class="theme-title">基本信息</div>
+    <div class="theme-box">
+        <div class="clearfix">
+            <div class="pull-left">
+                <img ng-src="{{$ctrl.shopInfo.photoUrl?$ctrl.shopInfo.photoUrl:'images/default_img.png'}}" alt="..." class="img-responsive shop_img">
+            </div>
+            <div class="pull-left ml20">
+                <h4>{{$ctrl.shopInfo.name}}</h4>
+                <div class="uib-width">
+                    <uib-progressbar class="progress-striped active" max="200" value="$ctrl.num*2" type="danger">{{$ctrl.num}}%</uib-progressbar>
+                    <p ng-show="$ctrl.num!=100"><span>老板请将你的信息填写完全</span>
+                    <p ng-show="$ctrl.num==100"><span>老板你的信息已经填写完全</span>
+                </div>
+            </div>
+        </div>
+       <div class="clearfix mb20">
+           <div class="row mt20 mb10">
+               <div class="col-xs-3 blod">店铺编号</div>
+               <div class="col-xs-3 blod">有效日期</div>
+               <div class="col-xs-3 blod">店长姓名</div>
+               <div class="col-xs-3 blod">联系电话</div>
+           </div>
+           <div class="row">
+               <div class="col-xs-3">{{$ctrl.shopInfo.code}}</div>
+               <div class="col-xs-3">{{$ctrl.shopInfo.startDate|date:'yyyy-MM-dd'}}至{{$ctrl.shopInfo.endDate |date:'yyyy-MM-dd'}}</div>
+               <div class="col-xs-3">{{$ctrl.shopInfo.admin}}</div>
+               <div class="col-xs-3">{{$ctrl.shopInfo.mobile}}</div>
+           </div>
+       </div>
+    </div>
+    <div class="theme-title">店铺信息</div>
+    <div class="theme-box">
+        <div class="row">
+            <div class="col-xs-6">店铺类型</div>
+            <div class="col-xs-6">营业时间</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">{{$ctrl.shopInfo.type}}</div>
+            <div class="col-xs-6" ng-show="$ctrl.shopInfo.startTime">{{$ctrl.shopInfo.startTime+'至'+$ctrl.shopInfo.endTime}}</div>
+        </div>
+    </div>
+    <div class="theme-title">店铺地址</div>
+    <div class="theme-box">
+
+        <h4>地址：{{$ctrl.shopInfo.province}}  {{$ctrl.shopInfo.city}}   {{$ctrl.shopInfo.address}}</h4>
+        <div class="my-map" ng-show="$ctrl.shopInfo.cityId">
+            <div id="container"></div>
+            <div id="panel"></div>
+        </div>
+    </div>
+    <div class="theme-title">公司介绍</div>
+    <div class="theme-box">
+        {{$ctrl.shopInfo.info}}
+    </div>
+</div>
+

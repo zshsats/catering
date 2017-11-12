@@ -1,0 +1,28 @@
+<header title="{one:'活动列表'}"></header>
+<div class="add-btn">
+    <button type="button" class="btn-cancle" ng-click="$ctrl.goLib()">新增</button>
+</div>
+<div class="main-body">
+    <div class="table-responsive theme-box">
+        <table class="table tb">
+            <tr class="tb-head">
+                <td>图标</td>
+                <td>类型</td>
+                <td>状态</td>
+                <td>名称</td>
+                <td>有效期</td>
+            </tr>
+            <tr class="tb-body" ng-repeat="item in $ctrl.acts">
+                <td>
+                    <img src="images/activity/event_a.png" class="img-responsive img-bg" />
+                </td>
+                <td ng-click="$ctrl.go(item.id)" class="act-name"><a>{{item.name}}</a></td>
+                <td><div class="state-act" ng-class="{'进行中':'term-pass','已到期':'pass','未开始':'no-pass'}[item.state]">{{item.state}}</div></td>
+                <td>{{item.type}}</td>
+                <td>
+                    {{item.startDate | date:'yyyy-MM-dd'}}至{{item.endDate | date:'yyyy-MM-dd'}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

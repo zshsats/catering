@@ -1,0 +1,28 @@
+<header title="{one:'菜品管理'}"></header>
+<div class="add-btn">
+    <button type="button" class="btn-cancle" ng-click="$ctrl.newAdd()">新增</button>
+</div>
+<div class="main-body">
+    <div class="theme-box">
+        <div class="cat-box">
+            <ul class="clearfix cat-menu">
+                <li class="pull-left" ng-class="{true:'loginActive'}[$ctrl.selected]" ng-click="$ctrl.selectAll()">全部菜品</li>
+                <li class="pull-left" ng-repeat="cat in $ctrl.categorys track by $index" ng-class="{[$index]:'loginActive'}[$ctrl.selected]" ng-click="$ctrl.selectCat($index,cat)">{{cat.name}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="theme-box">
+        <div class="row">
+            <div class="col-xs-4 col-md-4 col-lg-2" ng-repeat="item in $ctrl.dishes">
+                <div class="thumbnail dish-box" ng-click="$ctrl.reviseDish(item.id)">
+                    <img ng-src="{{item.photoUrl}}" alt="..." class="img-responsive">
+                    <div class="caption">
+                        <p class="center">
+                            <h4 class="center">{{item.name}} <span class="ml5">{{item.salePrice | currency: "￥"}}</span></h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="add-btn">
+    <button type="button" class="btn-cancle" ng-click="$ctrl.save()">保存</button>
+</div>
+<div class="theme-title">查看订单</div>
+<div class="theme-box">
+    <div class="table-responsive">
+        <table class="table tb">
+            <tr class="tb-head">
+                <td>图片</td>
+                <td>菜品</td>
+                <td>价格</td>
+                <td>数量</td>
+                <td>总价</td>
+                <td>删除</td>
+            </tr>
+            <tr class="tb-body" ng-repeat="item in $ctrl.selectDish">
+                <td >
+                    <img src="images/activity/event_a.png" class="img-responsive img-bg" />
+                </td>
+                <td ng-click="$ctrl.lookDish(item.id)"><a>{{item.name}}</a></td>
+                <td>{{item.salePrice}}</td>
+                <td>
+                    <div class="">
+                      <input class="form-control d-inline" style="width: auto" ng-model="item.num" ng-init="item.num=1" type="number">
+                    </div>
+                </td>
+
+                <td>
+                    {{item.num==1?item.salePrice:item.salePrice*item.num}}
+                </td>
+                <td>
+                    111
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

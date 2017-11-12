@@ -1,0 +1,204 @@
+@bg-c:#4B4745;
+@wt:#fff;
+@title:18px;
+@font-btn:#868ea2;
+@tb-color:#eef3fc;   //容器内填充区域颜色
+@btn-word:#868ea2;
+@theam-c:#fd8900;//辅助说明文字颜色
+@pay-color:#8890a3;
+@title-color:#204659;  //标题正文颜色    //图标默认颜色
+@theme-color:#fd8900;   //用于整体风格的识别以及激活元素（菜单、选项卡等）积极行为的按钮
+//@background-color:#ebebeb;
+@background-color:#eceef2;
+
+
+html,body{
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background:#FAFAFA;
+  overflow:hidden;
+}
+.iconfont{
+  cursor: pointer;
+}
+.wd{
+  width: 100%;
+}
+.con-box{
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.main-count{
+  background: #EFEFF4;
+  margin-left:200px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.main-body{
+  overflow-y: auto;
+  height: auto;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+.mtp{
+  #rem.elem(margin-top,20px);
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+ul li{
+  list-style-type: none;
+}
+.wd{
+  width: 100%
+}
+.theme-box{
+  margin: 10px 15px;
+  padding: 15px;
+  background: #fff;
+  height: auto;
+  color: #204659;
+}
+.theme-title{
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #fff;
+  margin: 10px 15px -10px 15px;
+  border-bottom:1px solid #EFEFF4;
+}
+.d-inline{
+  display: inline-block;
+}
+.input-box{
+  position: relative;
+  width: 100%;
+  .d-inline;
+  .input-s {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+  .input-btn{
+    .d-inline;
+    border:1px solid red;
+    top:8px;
+    right:5px;
+    height: 34px;
+    width: 40px;
+  }
+  .input-l{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+  }
+}
+.ml20{
+  margin-left: 20px;
+}
+.ml5{
+  margin-left: 5px;
+}
+.mr20{
+  margin-right: 20px;
+}
+.mb10{
+  margin-bottom: 10px;
+}
+.mt10{
+  margin-top: 10px;
+}
+.mt20{
+  margin-top: 20px;
+}
+.mb20{
+  margin-bottom: 20px;
+}
+.add-btn{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index:60;
+}
+.exit-icon{
+  margin-top: 10px;
+}
+a{
+  color: @theam-c;
+}
+.center{
+  text-align: center;
+}
+.my-table{
+  thead tr td{
+    background: #eef3fc;
+    color: #868ea2;
+    border:0;
+  }
+}
+.btn-cancle{
+  padding: 10px 20px;
+  color:@font-btn;
+  background: #fff;
+  font-size: 16px;
+  outline: none;
+  min-width: 100px;
+  border-radius: 5px;
+  border: 1px solid #dae4e8;
+  &:active{
+    background:  @theme-color;
+  }
+  &:link{
+    background: #fff;
+  }
+  &:disabled{
+    background: @theme-color;
+    opacity: 0.5;
+  }
+}
+.foot-model{
+  padding: 20px 15px;
+  background: #fff;
+}
+.font-title{
+  font-weight: 600;
+  font-size: 14px;
+}
+.dn{
+  display: none;
+  visibility: hidden;
+}
+.tb{
+  border-collapse: separate;
+  .tb-head{
+    background: @tb-color;
+    color: @btn-word;
+    td{
+      border: 0;
+    }
+  }
+  .tb-body td{
+    padding-top:15px;
+    padding-bottom:15px;
+    vertical-align: middle;
+  }
+  tbody>:nth-child(2) td{
+    border-top:0 ;
+  }
+}
+.no-br{
+  white-space:nowrap;
+}
+.valide{
+  color: coral;
+}
+.wd5{
+  width: 50%;
+}

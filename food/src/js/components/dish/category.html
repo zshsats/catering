@@ -1,0 +1,21 @@
+<header title="{one:'菜品类别'}"></header>
+<div class="main-body">
+    <div class="theme-box">
+        <div class="table-responsive">
+            <div class="input-box">
+                <div class="input-group">
+                    <input type="text" ng-model="$ctrl.cateName" class="form-control" id="exampleInputAmount" placeholder="添加菜品类别">
+                    <div class="input-group-addon" ng-click="$ctrl.addCate()"><span class="iconfont icon-jiahao1"></span></div>
+                </div>
+            </div>
+            <table class="table my-table">
+                <tbody class="category-list">
+                <tr ng-class="{1:'warning',2:'active',3:'success',0:'danger'}[$index%4]" ng-repeat="item in $ctrl.categorys track by $index">
+                    <td>{{item.name}}</td>
+                    <td ng-click="$ctrl.delCate(item)"><span class="iconfont icon-lajixiang mr20"></span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

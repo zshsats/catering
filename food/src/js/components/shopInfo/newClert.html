@@ -1,0 +1,100 @@
+<header title="{one:'新增菜品'}"></header>
+<div class="add-btn exit-icon" ng-click="$ctrl.dismiss()">
+    <span class="iconfont icon-cuowu"></span>
+</div>
+<div class="main-body">
+    <div class="theme-title">基本信息</div>
+    <div class="theme-box">
+        <form name="formAct" novalidate>
+            <div class="row">
+            <div class="col-xs-6">
+                <p class="mt10">编号</p>
+                <div class="input-box">
+                    <input type="number" ng-model="$ctrl.clertInfo.id" name="id" class="form-control"  placeholder="编号" required>
+                </div>
+                <div class="valide mb10" ng-show="formAct.id.$dirty && formAct.id.$invalid">
+                    <div ng-show="formAct.id.$error.required">编号不能为空不能为空</div>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <p class="mt10">姓名</p>
+                <div class="input-box">
+                    <input type="text" ng-model="$ctrl.clertInfo.name" class="form-control" name="name"  placeholder="姓名" required>
+                    <span class="input-s iconfont icon-cuowu"></span>
+                </div>
+                <div class="valide mb10" ng-show="formAct.name.$dirty && formAct.name.$invalid">
+                    <div ng-show="formAct.name.$error.required">员工姓名不能为空</div>
+                </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <p class="mt10">手机号</p>
+                    <div class="input-box">
+                        <input type="text" ng-model="$ctrl.clertInfo.mobile" class="form-control" name="photo" placeholder="手机号" required>
+                        <span class="input-s iconfont icon-cuowu"></span>
+                    </div>
+                    <div class="valide mb10" ng-show="formAct.name.$dirty && formAct.name.$invalid">
+                        <div ng-show="formAct.name.$error.required">手机号不能为空</div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <p class="mt10">年龄</p>
+                    <div class="input-box">
+                        <input type="number" ng-model="$ctrl.clertInfo.age" class="form-control"  placeholder="编号">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <p class="mt10">密码</p>
+                    <div class="input-box">
+                        <input type="text" ng-model="$ctrl.clertInfo.pwd" class="form-control" name="pwd" placeholder="密码" required/>
+                        <span class="input-s iconfont icon-cuowu"></span>
+                    </div>
+                    <div class="valide mb10" ng-show="formAct.pwd.$dirty && formAct.pwd.$invalid">
+                        <div ng-show="formAct.pwd.$error.required">手机号不能为空</div>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <p class="mt10">职位</p>
+                    <div class="input-box">
+                        <input type="text" ng-model="$ctrl.clertInfo.position" class="form-control"  placeholder="姓名">
+                        <span class="input-s iconfont icon-cuowu"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <p class="mt10">请选择上传个人头像</p>
+                    <div class="clearfix">
+                        <upload-img img="$ctrl.clertInfo.photoUrl" height="233" ></upload-img>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <p class="mt10">选择性别</p>
+                    <div class="d-inline">
+                        <input type="radio" id="check-pay1" class="chk_1" ng-model="$ctrl.clertInfo.sex" name="sex"  value="男士"/><label for="check-pay1"></label>男士
+                    </div>
+                    <div class="d-inline">
+                        <input type="radio" id="check" class="chk_1" ng-model="$ctrl.clertInfo.sex" name="sex"  value="女士"/><label for="check"></label>女士
+                    </div>
+                    <p class="mt10">个人简介</p>
+                    <textarea class="form-control" rows="8" ng-model="$ctrl.clertInfo.info"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="foot-model clearfix">
+        <div class="pull-left">
+            <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.delDish()">删除</button>
+        </div>
+        <div class="pull-right mr20">
+            <button type="button" class="btn btn-default btn-cancle" ng-disabled="formAct.$invalid" ng-click="$ctrl.addClert()">保存</button>
+        </div>
+        <div class="pull-right mr20">
+            <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.dismiss()">取消</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="main-body">
+    <div class="theme-title">店铺信息</div>
+    <div class="theme-box ">
+      <ul class="shop-li">
+          <li><span class="blod">门店名称：</span>{{$ctrl.shopInfo.name}}</li>
+          <li><span class="blod">开店日期：</span>{{$ctrl.shopInfo.startDate}}</li>
+          <li><span class="blod">结束日期：</span>{{$ctrl.shopInfo.startDate}}</li>
+          <li><span class="blod">店长姓名：</span>{{$ctrl.shopInfo.admin}}</li>
+          <li><span class="blod">联系电话：</span>{{$ctrl.shopInfo.mobile}}</li>
+          <li><span class="blod">店铺类型：</span>{{$ctrl.shopInfo.type}}</li>
+          <li><span class="blod">营业时间：</span>{{$ctrl.shopInfo.startTime}}-----{{$ctrl.shopInfo.endTime}}</li>
+          <li><span class="blod">店铺地址：</span>{{$ctrl.shopInfo.province}}-{{$ctrl.shopInfo.city}}-{{$ctrl.shopInfo.address}}</li>
+      </ul>
+        <div class="panel panel-default mt20">
+            <div class="panel-heading" style="background-color: #fff;">
+                <h3 class="panel-title">
+                    门店介绍
+                </h3>
+            </div>
+            <div class="panel-body">
+                {{$ctrl.shopInfo.info}}
+            </div>
+        </div>
+
+    </div>
+
+</div>

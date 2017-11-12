@@ -1,0 +1,33 @@
+<form name="formAct" novalidate>
+    <div class="input-box mb10">
+        <input type="text" ng-model="$ctrl.loginInfo.shopId" name="shopId" class="form-control login—put"  placeholder="店铺编号" required ng-maxlength="4">
+        <span class="input-l iconfont icon-cuowu" ng-click="$ctrl.clearInput($ctrl.loginInfo)"></span>
+    </div>
+    <div class="valide mb10" ng-show="formAct.shopId.$dirty && formAct.shopId.$invalid">
+        <div ng-show="formAct.shopId.$error.required">管理员账号不能为空</div>
+        <div ng-show="formAct.shopId.$error.maxlength">管理员账号不能超过四个字符</div>
+    </div>
+    <div class="input-box mt20">
+        <input type="password" ng-model="$ctrl.loginInfo.pwd" name="pwd" class="form-control login—put"  placeholder="店铺密码" required ng-maxlength="8">
+        <span class="input-l iconfont icon-cuowu" ng-click="$ctrl.clearInput($ctrl.loginInfo)"></span>
+    </div>
+    <div class="valide" ng-show="formAct.pwd.$dirty && formAct.pwd.$invalid">
+        <div ng-show="formAct.pwd.$error.required">管理员账号密码不能为空</div>
+        <div ng-show="formAct.pwd.$error.maxlength">管理员密码不能超过8位</div>
+    </div>
+    <div class="clearfix mt20">
+        <div class="pull-left" ng-click="$ctrl.check1!=$ctrl.check1">
+            <p><input type="checkbox" id="check-pay" class="chk_1" ng-model="$ctrl.check1" /><label for="check-pay"></label>记住密码</p>
+        </div>
+    </div>
+</form>
+<div class="wd mt10">
+    <button class="btn-cancle wd login-size" ng-disabled="formAct.$invalid" ng-click="$ctrl.login()">登录</button>
+</div>
+<div class="clearfix mt20">
+    <div class="pull-left" ng-click="$ctrl.regist()">
+        <a href="">你还没注册店铺？点击注册</a>
+    </div>
+</div>
+
+

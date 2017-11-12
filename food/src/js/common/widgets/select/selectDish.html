@@ -1,0 +1,36 @@
+<header title="{one:'新增菜品'}"></header>
+<div class="main-body">
+    <div class="theme-box">
+        <div ng-repeat="item in $ctrl.dishes" ng-init="$ary=$index">
+            <p>
+                <input type="checkbox" id="cat{{$ary}}" ng-model="item.checked" ng-init="item.checked=false" class="chk_1" ng-click="$ctrl.selectCal($ary,item)" /><label for="cat{{$ary}}" ></label><span class="mr20">{{item.name}}</span>
+                <span>本页&nbsp;&nbsp;已选 <span class="selected-num">{{$ctrl.selects[$ary].length}}</span>个</span>
+            </p>
+            <div class="row">
+                <div class="col-xs-3" ng-repeat="unit in item.dishlst" ng-click="$ctrl.bigSelect($ctrl.selects[$ary],unit)">
+                    <div class="thumbnail dish-box">
+                        <div class="dish-check">
+                            <p><input type="checkbox" id="dish{{unit.id}}" class="chk_1" data-checklist-model="$ctrl.selects[$ary]" data-checklist-value="unit"/><label for="dish{{unit.id}}"></label>
+                            </p>
+                        </div>
+                        <img ng-src="{{unit.photoUrl}}" alt="..." class="img-responsive">
+                        <div class="caption">
+                            <p class="center">
+                                <span class="mr20">{{unit.name}}</span><span>￥{{unit.salePrice}}</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="foot-model clearfix">
+    <div class="pull-right mr20">
+        <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.save()">保存</button>
+    </div>
+    <div class="pull-right mr20">
+        <button type="button" class="btn btn-default btn-cancle" ng-click="$ctrl.dismiss()">取消</button>
+    </div>
+</div>

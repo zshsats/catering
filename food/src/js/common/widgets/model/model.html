@@ -1,0 +1,16 @@
+<div class="modal-header" ng-show="show">
+    <div class="modal-title bold">提示</div>
+</div>
+<div class="modal-body" id="modal-body">
+    {{content}}
+</div>
+<div class="clearfix" ng-show="show">
+    <div class="model-foot clearfix">
+        <div class="pull-left foot-box" ng-click="dis()">
+            取消
+        </div>
+        <div class="pull-left foot-box" ng-click="ok()">
+            确定
+        </div>
+    </div>
+</div>
